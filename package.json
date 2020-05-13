@@ -27,15 +27,13 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "acorn": "^7.1.1",
     "axios": "^0.19.2",
-    "body-parser": "^1.19.0",
     "bootstrap": "^3.3.7",
     "express": "^4.17.1",
-    "minimist": "^1.2.5",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.11",
     "mysql": "^2.18.1",
+    "sqlite3": "^4.1.0",
     "path": "^0.12.7",
     "postgres": "1.0.2",
     "react": "^16.12.0",
