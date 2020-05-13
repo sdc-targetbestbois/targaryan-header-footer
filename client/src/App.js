@@ -8,7 +8,7 @@ export default class App extends Component {
     super();
     this.state = {
       items: [],
-      header: "TARGARYEN",
+      cartNum: 3,
       footer: "targaryen"
     };
 
@@ -34,12 +34,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div>
-          <Header header={this.state.header} />
-        </div>
-        <div>
-          <Footer footer={this.state.footer} />
-        </div>
+        <Header cartNum={this.state.cartNum}/>
+        
+        <Footer footer={this.state.footer} />
+      
       </div>
     );
   }
