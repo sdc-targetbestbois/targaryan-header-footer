@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       items: [],
-      cartNum: 3,
-      footer: "targaryen"
+      cartNum: 3
     };
 
     this.getAllItems = this.getAllItems.bind(this);
@@ -35,9 +33,6 @@ export default class App extends Component {
     return (
       <div>
         <Header cartNum={this.state.cartNum}/>
-        
-        <Footer footer={this.state.footer} />
-      
       </div>
     );
   }
