@@ -19,7 +19,7 @@ CREATE TABLE items (
  * please don't read into them. :) */
 
 INSERT INTO items (id, item, category) VALUES (1, 'Sigil Tapestry Pillow', 'Home Goods');
-INSERT INTO items (id, item, category) VALUES (2, 'Dragonstone Stein', 'Kitchen');
+INSERT INTO items (id, item, category) VALUES (2, 'Dragonstone Stein', 'Kitchen & Dining');
 INSERT INTO items (id, item, category) VALUES (3, 'Dragon Egg Box', 'Home Goods');
 INSERT INTO items (id, item, category) VALUES (4, 'Night King Mask', 'Apparel');
 INSERT INTO items (id, item, category) VALUES (5, 'Fire and Blood Sock Set', 'Apparel');
