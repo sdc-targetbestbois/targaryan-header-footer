@@ -19,7 +19,7 @@ export default class App extends Component {
   }
 
   getAllItems() {
-    Axios.get('/api/items')
+    Axios.get('http://localhost:4005/api/items')
     .then((res) => {
       console.log('from Axios GET request: ', res);
       this.setState({
