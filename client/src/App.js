@@ -7,7 +7,7 @@ export default class App extends Component {
     super();
     this.state = {
       items: [],
-      cartNum: 3
+      cartNum: null
     };
 
     this.getAllItems = this.getAllItems.bind(this);
