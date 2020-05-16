@@ -95,13 +95,13 @@ input, select, textarea {
   .Menu {
     display: none !important;
   }
-  .SearchInput .searchInputForm input {
+  .SearchInput #searchInputForm input {
     padding: 10px 72px 10px 16px;
   }
-  .SearchInput .searchInputForm {
+  .SearchInput #searchInputForm {
     height: 40px !important;
   }
-  .SearchInput .searchInputForm::before {
+  .SearchInput #searchInputForm::before {
     height: 40px !important;
   }
   .AccountBox {
@@ -272,7 +272,7 @@ input, select, textarea {
   flex: 1 1 100%;
 }
 
-.SearchInput .searchInputForm {
+.SearchInput #searchInputForm {
   display: block;
   position: relative;
   background-color: rgb(255, 255, 255);
@@ -284,7 +284,7 @@ input, select, textarea {
   border-radius: 25px;
 }
 
-.SearchInput .searchInputForm::before {
+.SearchInput #searchInputForm::before {
   content: "";
   position: absolute;
   right: 0px;
@@ -302,7 +302,7 @@ input, select, textarea {
   background-position: 42% 50%;
 }
 
-.SearchInput .searchInputForm input {
+.SearchInput #searchInputForm input {
   display: block;
   width: 100%;
   cursor: text;
