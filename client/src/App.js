@@ -19,7 +19,7 @@ export default class App extends Component {
   }
 
   getAllItems() {
-    Axios.get('http://localhost:4005/api/items')
+    Axios.get('http://targaryenstore-env.eba-pcr3t8nd.us-east-2.elasticbeanstalk.com/api/items')
     .then((res) => {
       console.log('from Axios GET request: ', res);
       this.setState({
