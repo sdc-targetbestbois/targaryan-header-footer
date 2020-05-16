@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "seed": "mysql -u root -p < database/schema.sql",
+    "login": "mysql -h targaryenstore-1.cibgtfi0b8pn.us-east-1.rds.amazonaws.com -P 3306 -u mchughb -p",
     "dev-compile": "webpack -d -w",
     "dev-server": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  }, 
   "keywords": [],
   "author": "",
   "license": "ISC",
