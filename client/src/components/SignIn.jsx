@@ -20,7 +20,6 @@ function SignIn() {
         </span>
       </span>
       <span className="caret">\/</span>
-      {/* <span class="h-sr-only">user account</span> */}
       <span className="SignIn">Sign in</span>
     </a>
   )
