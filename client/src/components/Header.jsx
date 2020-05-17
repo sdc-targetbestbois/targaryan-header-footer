@@ -37,7 +37,8 @@ function Header( {cartNum} ) {
             <span className="caret"></span>
           </a>
           <a href="#sameDayDelivery" className="Delivery postings nav-drop full-nav" 
-          id="delivery">Same Day Delivery
+          id="delivery">
+            Same Day Delivery
           </a>
 
           <Search />
