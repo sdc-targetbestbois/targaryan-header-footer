@@ -356,6 +356,7 @@ input, select, textarea {
 .UserWrapper {
   position: relative;
   top: 3px;
+  right: 7px;
 }
 
 .UserWrapper svg {

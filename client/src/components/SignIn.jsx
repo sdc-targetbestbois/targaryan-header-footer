@@ -19,7 +19,6 @@ function SignIn() {
           </div>
         </span>
       </span>
-      <span className="caret">\/</span>
       <span className="SignIn">Sign in</span>
     </a>
   )

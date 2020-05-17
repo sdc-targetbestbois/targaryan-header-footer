@@ -17,4 +17,4 @@ COPY . /src/app
 EXPOSE 4005
 
 # Run index.js when the container launches
-CMD ["npm", "run", "dev-server"]
+CMD ["npm", "run", "start"]
