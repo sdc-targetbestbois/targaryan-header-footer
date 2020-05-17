@@ -1,7 +1,8 @@
 import React from "react";
 
 function Cart( {cartNum} ) {
-
+  cartNum > 0 ? cartNum = cartNum : cartNum = null;
+  
   return (
     <a href="/cart" className="Checkout postings" id="cart">
       <span className="CartNum">{cartNum}</span>
