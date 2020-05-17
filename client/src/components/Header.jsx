@@ -17,16 +17,24 @@ function Header( {cartNum} ) {
             </span>
           </a>
           <a href="#categoriesMenu" className="Menu postings nav-drop" 
-          id="menu"><span>Menu</span><span className="caret">\/</span>
+          id="menu">
+            <span>Menu</span>
+            <span className="caret"></span>
           </a>
           <a href="#categoriesMenu" className="Categories postings nav-drop" 
-          id="categories"><span>Categories</span><span className="caret">\/</span>
+          id="categories">
+            <span>Categories</span>
+            <span className="caret"></span>
           </a>
           <a href="#dealsMenu" className="Deals postings nav-drop full-nav" 
-          id="deals">Deals<span className="caret">\/</span>
+          id="deals">
+            Deals
+            <span className="caret"></span>
           </a>
           <a href="#trendingMenu" className="Trending postings nav-drop full-nav" 
-          id="trending">What’s New<span className="caret">\/</span>
+          id="trending">
+            What’s New
+            <span className="caret"></span>
           </a>
           <a href="#sameDayDelivery" className="Delivery postings nav-drop full-nav" 
           id="delivery">Same Day Delivery
