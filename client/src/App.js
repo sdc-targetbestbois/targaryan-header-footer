@@ -7,7 +7,7 @@ export default class App extends Component {
     super();
     this.state = {
       items: [],
-      cartNum: null
+      cartNum: 0
     };
 
     this.getAllItems = this.getAllItems.bind(this);
@@ -15,7 +15,11 @@ export default class App extends Component {
   
   componentDidMount() {
     //get items on initial render
-    this.getAllItems()
+    this.getAllItems();
+ 
+    document.addEventListener('addToCart', () => {
+      this.setState({cartNum: this.state.cartNum + 1})
+    })
   }
 
   getAllItems() {
