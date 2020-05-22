@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
 .env
-client/dist/bundle.js
-database/targaryen_inventory.csv
-database/config.js
+bundle.js
+*.csv
+config.js

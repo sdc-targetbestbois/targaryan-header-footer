@@ -1,47 +1,69 @@
-const mysql = require('mysql');
-const { mysqlConfig } = require('./config');
+const mongoose = require('mongoose');
+const config = require('./config');
 
-const connection = mysql.createConnection(mysqlConfig);
+mongoose.connect("mongodb://127.0.0.1:27017/targaryan", {useNewUrlParser: true})
+.then(() => {
+  console.log("database connected!")
+})
+.catch(err => {
+  console.error("database connection error!")
+})
 
-connection.connect(err => {
-  if (err) {
-    console.log('problem connecting to database');
-  } else {
-    console.log('connected to MySQL database');
-  }
-});
 
-const getItems = (callback) => {
-  connection.query('SELECT * FROM items', (err, items) => {
+var schema = new mongoose.Schema({id: Number, name: String, category: String})
+const products = mongoose.model("product", schema)
+
+const find = (id, callback) => {
+  console.log(typeof id)
+  var obj = {id: id}
+  products.find(obj).lean().exec((err, data) => {
     if (err) {
-      console.log('problem querying for items');
-      callback(err, null);
+      console.log("Could not find item in queries!", err);
+      callback(err, null)
     } else {
-      callback(null, items);
+      callback(null, data);
     }
-  });
+  })
 };
 
+const save = (item, callback) => {
+  let doc = new products(item);
 
-//***************************
-// Add new functions as needed
-//***************************
-module.exports = { getItems };
+  doc.save((err, data) => {
+    if (err) {
+      console.log("Could not save item!")
+      callback(err, null)
+    } else {
+      callback(null, data)
+    }
+  })
+};
 
+const update = (id, body, callback) => {
+  products.findOneAndUpdate({id: id}, body, {useFindAndModify: false}, (err, data) => {
+    if (err) {
+      console.log("Could not update data!");
+      callback(err, null);
+    } else {
+      callback(null, data)
+    }
+  })
+};
 
-// const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/fetcher');
+const remove = (id, callback) => {
+  products.deleteOne({id: id}, (err, data) => {
+    if (err) {
+      console.log("could not delete item!");
+      callback(err, null)
+    } else {
+      callback(null, data);
+    }
+  })
+}
 
-// let repoSchema = mongoose.Schema({
-//   // TODO: your schema here!
-// });
-
-// let Repo = mongoose.model('Repo', repoSchema);
-
-// let save = (/* TODO */) => {
-//   // TODO: Your code here
-//   // This function should save a repo or repos to
-//   // the MongoDB
-// }
-
-// module.exports.save = save;
+module.exports = {
+  find,
+  save,
+  update,
+  remove
+};
