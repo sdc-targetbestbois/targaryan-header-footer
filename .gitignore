@@ -4,3 +4,4 @@ node_modules
 client/dist/bundle.js
 database/targaryen_inventory.csv
 database/config.js
+database/data.csv
