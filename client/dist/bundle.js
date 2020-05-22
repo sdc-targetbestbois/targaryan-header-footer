@@ -631,7 +631,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Brian/Targaryen/Brian-Component/client/src/index.js */"./client/src/index.js");
+module.exports = __webpack_require__(/*! /mnt/c/Users/06089/Documents/HRATX48/Brian-Component/client/src/index.js */"./client/src/index.js");
 
 
 /***/ })
