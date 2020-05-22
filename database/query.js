@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('./config');
 
-const connection = mongoose.connect("mongodb://127.0.0.1:27017/", {useNewUrlParser: true})
+mongoose.connect("mongodb://127.0.0.1:27017/targaryan", {useNewUrlParser: true})
 .then(() => {
   console.log("database connected!")
 })
@@ -9,30 +9,16 @@ const connection = mongoose.connect("mongodb://127.0.0.1:27017/", {useNewUrlPars
   console.error("database connection error!")
 })
 
-// mongoose.connection.once('open', () => {
-//   console.log('Connected to mongoDB')
-// }).on('error', (error) => {
-//   console.log('Connection failed: ', error);
-// })
-
-// const getItems = (callback) => {
-//   connection.collection.find('SELECT * FROM items', (err, items) => {
-//     if (err) {
-//       console.log('problem querying for items');
-//       callback(err, null);
-//     } else {
-//       callback(null, items);
-//     }
-//   });
-// };
 
 var schema = new mongoose.Schema({id: Number, name: String, category: String})
-const db = mongoose.model("products", schema)
+const products = mongoose.model("product", schema)
 
 const find = (id, callback) => {
-  db.find(id, (err, data) => {
+  console.log(typeof id)
+  var obj = {id: id}
+  products.find(obj).lean().exec((err, data) => {
     if (err) {
-      console.log("Could not find item in queries!");
+      console.log("Could not find item in queries!", err);
       callback(err, null)
     } else {
       callback(null, data);
@@ -41,7 +27,7 @@ const find = (id, callback) => {
 };
 
 const save = (item, callback) => {
-  let doc = new db(item);
+  let doc = new products(item);
 
   doc.save((err, data) => {
     if (err) {
@@ -53,8 +39,8 @@ const save = (item, callback) => {
   })
 };
 
-const update = (body, callback) => {
-  db.updateOne({id: body.id, name: body.name, category: body.category}, (err, data) => {
+const update = (id, body, callback) => {
+  products.findOneAndUpdate({id: id}, body, {useFindAndModify: false}, (err, data) => {
     if (err) {
       console.log("Could not update data!");
       callback(err, null);
@@ -65,7 +51,7 @@ const update = (body, callback) => {
 };
 
 const remove = (id, callback) => {
-  db.deleteOne({id: id}, (err, data) => {
+  products.deleteOne({id: id}, (err, data) => {
     if (err) {
       console.log("could not delete item!");
       callback(err, null)
