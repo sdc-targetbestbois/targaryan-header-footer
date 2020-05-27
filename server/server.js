@@ -1,6 +1,7 @@
+const newrelic = require('newrelic')
 const express = require('express');
 const path = require("path");
-const cors = require('cors')
+const cors = require('cors');
 const port = 9002;
 const db = require('../database/query');
 const app = express();
@@ -8,7 +9,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
 app.use(cors());
-//app.use(express.urlencoded({extended: true})); //Parse URL-encoded bodies
+app.use(express.urlencoded({extended: true})); //Parse URL-encoded bodies
 
 app.get('/api/items', (req, res) => {
   db.find(req.query.id, (err, data) => {
