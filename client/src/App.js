@@ -36,7 +36,7 @@ export default class App extends Component {
   // }
 
   getItemById(id) {
-    Axios.get('http://localhost:9002/api/items', {params: {id: id}})
+    Axios.get('http://ec2-18-224-38-14.us-east-2.compute.amazonaws.com:9002/api/items', {params: {id: id}})
     .then(res => {
       console.log('item from Axios GET reqest', res)
       const singleItem = res.data
