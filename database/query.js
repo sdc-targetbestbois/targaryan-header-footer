@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const config = require('./config');
 
-mongoose.connect("mongodb://ec2-18-224-38-14.us-east-2.compute.amazonaws.com/targaryan", {useNewUrlParser: true})
+mongoose.connect("mongodb://admin:password@ec2-18-224-38-14.us-east-2.compute.amazonaws.com/targaryan", {useNewUrlParser: true})
 .then(() => {
   console.log("database connected!")
 })
