@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({extended: true})); //Parse URL-encoded bodies
 
-app.get("/loaderio-403b31a9496f9da28bde64b1304bd670", (req, res) => {
+app.get("/loaderio-403b31a9496f9da28bde64b1304bd670/", (req, res) => {
   res.send('loaderio success!')
 })
 
