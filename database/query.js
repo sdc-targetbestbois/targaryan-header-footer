@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('./config');
 
-mongoose.connect(`mongodb://${config}`, {useNewUrlParser: true})
+mongoose.connect(`mongodb://${config.url}`, {useNewUrlParser: true})
 .then(() => {
   console.log("database connected!")
 })
