@@ -6,9 +6,9 @@ const port = 9002;
 const db = require('../database/query');
 const app = express();
 
+app.use(cors());
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
-app.use(cors());
 app.use(express.urlencoded({extended: true})); //Parse URL-encoded bodies
 
 
